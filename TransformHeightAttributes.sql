@@ -4,42 +4,35 @@
 
 	-- line heights
 		UPDATE manhattan_building_lines
-		set height = NULLIF("building:levels", '')::int * 4
-		where "building:levels" is not null and height is not null;
-
+		SET height = COALESCE(NULLIF(replace(split_part(height,';',1),'''',''),'')::float ,	NULLIF(split_part("building:levels",';',1),'')::float * 3.7 ,	0 );		
+                                                                            
 		UPDATE manhattan_building_part_lines
-		set height = NULLIF("building:levels", '')::int * 4
-		where "building:levels" is not null and height is not null;
+		SET height = COALESCE(NULLIF(replace(split_part(height,';',1),'''',''),'')::float ,	NULLIF(split_part("building:levels",';',1),'')::float * 3.7 ,	0 );		
 
 		
 	-- poly heights
 		
 		UPDATE manhattan_building_poly
-		set height = NULLIF("building:levels", '')::int * 4
-		where "building:levels" is not null and height is not null;
+		SET height = COALESCE(NULLIF(replace(split_part(height,';',1),'''',''),'')::float ,	NULLIF(split_part("building:levels",';',1),'')::float * 3.7 ,	0 );		
 
 		UPDATE manhattan_building_part_poly
-		set height = NULLIF("building:levels", '')::int * 4
-		where "building:levels" is not null and height is not null;
+		SET height = COALESCE(NULLIF(replace(split_part(height,';',1),'''',''),'')::float ,	NULLIF(split_part("building:levels",';',1),'')::float * 3.7 ,	0 );
 
 
 	-- line min_heights
 
 		UPDATE manhattan_building_lines
-		set min_height = NULLIF("building:min_level", '')::int * 4
-		where "building:min_level" is not null and min_height is not null;
+		SET min_height = COALESCE(NULLIF(replace(split_part(min_height,';',1),'''',''),'')::float ,	NULLIF(split_part("building:min_level",';',1),'')::float * 3.7 ,	0 );
+		
 
 		UPDATE manhattan_building_part_lines
-		set min_height = NULLIF("building:min_level", '')::int * 4
-		where "building:min_level" is not null and min_height is not null;
+		SET min_height = COALESCE(NULLIF(replace(split_part(min_height,';',1),'''',''),'')::float ,	NULLIF(split_part("building:min_level",';',1),'')::float * 3.7 ,	0 );
 
 		
 	-- poly min_heights
 				
 		UPDATE manhattan_building_poly
-		set min_height = NULLIF("building:min_level", '')::int * 4
-		where "building:min_level" is not null and min_height is not null;
+		SET min_height = COALESCE(NULLIF(replace(split_part(min_height,';',1),'''',''),'')::float ,	NULLIF(split_part("building:min_level",';',1),'')::float * 3.7 ,	0 );
 
 		UPDATE manhattan_building_part_poly
-		set min_height = NULLIF("building:min_level", '')::int * 4
-		where "building:min_level" is not null and min_height is not null;
+		SET min_height = COALESCE(NULLIF(replace(split_part(min_height,';',1),'''',''),'')::float ,	NULLIF(split_part("building:min_level",';',1),'')::float * 3.7 ,	0 );
