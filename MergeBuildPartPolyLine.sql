@@ -1,13 +1,12 @@
 CREATE TABLE building_part AS
 
 SELECT "building"
-	,"building:colour"
+	,"building:colour" as  "color"
 	,NULL AS "building:level"
 	,"building:levels"
 	,"building:material"
 	,"building:min_level"
 	,"building:part"
-	,NULL AS "colour"
 	,"full_id"
 	,cast("height" AS DECIMAL(8, 2))
 	,"material"
@@ -25,13 +24,12 @@ FROM manhattan_building_part_poly
 UNION
 
 SELECT NULL AS "building"
-	,"building:colour"
+	,"building:colour" as "color"
 	,"building:level"
 	,"building:levels"
 	,"building:material"
 	,"building:min_level"
 	,"building:part"
-	,"colour"
 	,"full_id"
 	,cast("height" AS DECIMAL(8, 2))
 	,"material"
