@@ -3,13 +3,12 @@ CREATE TABLE building AS
 
 SELECT '' AS "bin"
 	,NULL AS "building"
-	,"building:colour"
+	,"building:colour" as "color"
 	,NULL AS "building:level"
 	,"building:levels"
 	,"building:material"
 	,"building:min_level"
 	,"building:part"
-	,NULL AS "colour"
 	,"full_id"
 	,cast("height" AS DECIMAL(8, 2))
 	,NULL AS "level"
@@ -30,7 +29,7 @@ UNION
 
 SELECT "bin"
 	,"building"
-	,"building:colour"
+	,"building:colour" as "color"
 	,"building:level"
 	,"building:levels"
 	,"building:material"
