@@ -8,10 +8,13 @@
 		,OSM_ID VARCHAR
 		,BIN VARCHAR
 		,geom GEOMETRY
-		)
+		);
 
 --Import data from .csv file 	
-	COPY TargetProps FROM '/project/Shape Retrieval 3.0/leasecomps.csv' WITH (FORMAT csv);
+	COPY TargetProps FROM '/project/MYOUTPUTFOLDER/leasecomp.csv' WITH (FORMAT csv);
+
+--Add geometry column
+	ALTER TABLE TargetProps ADD COLUMN geom GEOMETRY;
 
 --Create geometry data from coordinate data
-update  leasecomps set geom = ST_SetSRID(ST_MakePoint(cast(leasecomps.longitude as float), cast(leasecomps.latitude as float)),4326)
+	UPDATE  leasecomps SET geom = ST_SetSRID(ST_MakePoint(cast(leasecomps.longitude as float), cast(leasecomps.latitude as float)),4326);
