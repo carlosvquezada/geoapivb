@@ -1,11 +1,10 @@
 ALTER TABLE building_part RENAME COLUMN  "building" TO "part_building";
-ALTER TABLE building_part RENAME COLUMN  "building:colour" TO "part_building:colour";
+ALTER TABLE building_part RENAME COLUMN  "color" TO "part_color";
 ALTER TABLE building_part RENAME COLUMN  "building:level" TO "part_building:level";
 ALTER TABLE building_part RENAME COLUMN  "building:levels" TO "part_building:levels";
 ALTER TABLE building_part RENAME COLUMN  "building:material" TO "part_building:material";
 ALTER TABLE building_part RENAME COLUMN  "building:min_level" TO "part_building:min_level";
 ALTER TABLE building_part RENAME COLUMN  "building:part" TO "part_building:part";
-ALTER TABLE building_part RENAME COLUMN  "colour" TO "part_colour";
 ALTER TABLE building_part RENAME COLUMN  "full_id" TO "part_full_id";
 ALTER TABLE building_part RENAME COLUMN  "height" TO "part_height";
 ALTER TABLE building_part RENAME COLUMN  "material" TO "part_material";
