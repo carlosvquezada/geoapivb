@@ -17,4 +17,4 @@
 	ALTER TABLE TargetProps ADD COLUMN geom GEOMETRY;
 
 --Create geometry data from coordinate data
-	UPDATE  leasecomps SET geom = ST_SetSRID(ST_MakePoint(cast(leasecomps.longitude as float), cast(leasecomps.latitude as float)),4326);
+	UPDATE  TargetProps SET geom = ST_SetSRID(ST_MakePoint(cast(TargetProps.longitude as float), cast(TargetProps.latitude as float)),4326);
