@@ -35,7 +35,6 @@ SELECT "bin"
 	,"building:material"
 	,"building:min_level"
 	,"building:part"
-	,"colour"
 	,"full_id"
 	,cast("height" AS DECIMAL(8, 2))
 	,"level"
