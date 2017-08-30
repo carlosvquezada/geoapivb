@@ -5,10 +5,10 @@ SELECT
 	,	part_height as height
 	,	part_min_height as min_height
 	,	COALESCE("part_name", "name") as name
-	,	building
-	, 	"building:part"
 	,	COALESCE("part_color", "color") as color
 	, 	COALESCE("part_bulding:material", "building:material") as material
+	,	building
+	, 	"building:part"
 	, 	part_wkb_geometry  as wkb_geometry
 	FROM 
 	
